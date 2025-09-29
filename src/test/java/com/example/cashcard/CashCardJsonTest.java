@@ -1,7 +1,6 @@
 package com.example.cashcard;
 
 
-import example.cashcard.CashCard;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
@@ -38,7 +37,7 @@ class CashCardJsonTest {
            }
            """;
         assertThat(json.parse(expected))
-                .isEqualTo(new CashCard(99, 123.45));
+                .isEqualTo(new CashCard(99L, 123.45));
         assertThat(json.parseObject(expected).id()).isEqualTo(99);
         assertThat(json.parseObject(expected).amount()).isEqualTo(123.45);
     }
